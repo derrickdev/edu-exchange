@@ -1,0 +1,28 @@
+version: "3.9"
+services:
+
+  backend:
+    build:
+      context: ./back-api
+      dockerfile: Dockerfile
+    container_name: edu-back
+    ports:
+      - "9898:9898"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://ep-dry-math-96130912.us-east-2.aws.neon.tech/edu-db?user=akotchifo-mick&password=4UHjk8gQxODX&sslmode=require
+      - SPRING_DATASOURCE_DRIVER-CLASS= org.postgresql.Driver
+
+# Créer les images Docker
+#docker-compose build
+
+# Démarrer les conteneurs
+#docker-compose up -d
+
+# Arrêter les conteneurs
+#docker-compose down -v
+
+# Supprimer les conteneurs
+#docker-compose rm
+
+# Supprimer les images Docker
+#docker-compose rmi

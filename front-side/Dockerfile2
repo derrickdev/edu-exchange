@@ -1,0 +1,16 @@
+# Use an official Node.js image as a base
+FROM node:18
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the rest of your Next.js app
+COPY . .
+
+#setup dockerfile entry point
+RUN chmod +x docker.setup.sh
+
+# Expose the port that your Next.js app runs on
+EXPOSE 3000
+
+ENTRYPOINT [ "./docker.setup.sh" ]
